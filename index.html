@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./media.css">
     <link rel="preload" as="image" href="./public/hero-image.svg">
+    <link rel="icon" type="image/x-icon" href="./public/referR.png">
     <script src="./web-components/footer-links.js" defer></script>
     <script src="./web-components/footer-icons.js" defer></script>
+    <script src="./index.js" defer></script>
     <link rel="manifest" href="./manifest.json">
     <script>
         if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
@@ -37,8 +39,8 @@
                     and helps you to find your dream job.
                 </div>
                 <div class="hero_left_email_container">
-                    <input type="email" placeholder="Email address" />
-                    <button>Get Notified!</button>
+                    <input type="email" id="emailInput" placeholder="Email address" />
+                    <button id="getNotified">Get Notified!</button>
                 </div>
 
               </div>
