@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "./styles/header-styles.css";
+@import "./styles/hero-banner.css";
 @import "./styles/footer-styles.css";
 
 /* Global Styles */
@@ -13,7 +14,7 @@
     --BG:#F1F5F8;
     --primary:#8062D6;
     --border-color:#E5E7EB;
-    --section-gap:95.2px;
+    --section-gap:2.5rem;
 }
 
 body{
