@@ -1,0 +1,17 @@
+@media (1920px>=width>1280px){
+    body{
+        padding: 0 17rem;
+    }
+}
+
+@media (1280px>=width>744px){
+    body{
+        padding: 0 64px;
+    }
+}
+
+@media (744px>=width>412px){
+    body{
+        padding:0 37px;
+    }
+}
