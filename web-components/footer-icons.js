@@ -5,13 +5,13 @@ class FooterIcons extends HTMLElement {
         if (!iconsData) {
             iconsData = [
                 {
+                    alt: "email",
+                    src: "./public/email.svg"
+                },
+                {
                     alt: "linkedin",
                     src: "./public/linkedin.svg"
                 },
-                {
-                    alt: "instagram",
-                    src: "./public/instagram.svg"
-                }
             ];
         }
 
