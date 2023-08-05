@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Extreme:opsz,wght@8..144,200;8..144,300;8..144,500;8..144,600;8..144,700&display=swap");
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* ================= VARIABLE ================ */
+:root {
+	--primary-color: hsl(282, 26%, 49%);
+	--primary-color-alt: hsl(201, 39%, 45%);
+	--second-color: #7f6399;
+	--second-color-alt: hsla(220, 33%, 36%, 65%);
+	--third-color: hsl(220, 36%, 28%);
+	--white-color: #fbfbfb;
+	--white-color-alt: hsl(12, 14%, 93%);
+	--dark-color: hsl(300, 100%, 0%);
+}
+
+body {
+	font-family: "Pathway Extreme";
+	font-size: 1rem;
+	background-color: var(--white-color);
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* ================= HEADER ================ */
+header {
+	padding: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.logo {
+	font-size: 1rem;
+	background-clip: text;
+	color: #000000;
+}
+
+/* ================= BODY ================ */
+
+main {
+	width: 95vw;
+	margin: 0 auto;
+}
+
+
+.content{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.hero {
+	flex: 1;
+	display: flex;
+	padding: 2rem;
+	padding-right: 0rem;
+	width: 50%;
+	justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    display: none;
+  }
+}
+
+
+
+.text-container {
+	flex: 1;
+	width: 50%;
+	padding: 2rem 0 2rem 0;
+}
+
+
+.heading {
+	font-size: 1.7rem;
+	color: #000000;
+	text-align: left;
+	margin-bottom: 2rem;
+	font-weight: 800;
+}
+
+.slogan h2 {
+	color: #000000;
+	text-align: left;
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+.highlight {
+	color: #7564ac;
+}
+
+/* ================= SIGN UP THINGY ================ */
+
+.signup {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: left;
+	width: 100%;
+	margin-bottom: 2rem;
+	padding-top: 2rem;
+}
+
+.subscribe-input {
+	padding-bottom: 1rem;
+	padding-right: 1rem;
+	position: relative;
+	font-size: 1rem;
+	width: min(500px, 100%);
+	
+}
+.subscribe-input input {
+	appearance: none;
+	background: rgb(255, 255, 255);
+	border: 2px solid rgb(0, 0, 0);
+	box-shadow: 0 0 2px 2px #898585;
+	border-radius: 5px;
+	padding: 1rem;
+	width: 100%;
+	height: 50px;
+	color: #000000;
+	outline: none;
+	transition: border-color 300ms ease;
+}
+
+.subscribe-input .placeholder {
+	position: absolute;
+	top: -5%;
+	left: 0%;
+	color: #000000;
+	padding: 1rem;
+	font-size: 1rem;
+
+	transition: top 300ms ease, font-size 300ms ease, color 300ms ease;
+}
+
+.subscribe-input input:valid,
+.subscribe-input input:focus {
+	border-color: rgb(255, 255, 255);
+	transition-delay: 200ms;
+}
+
+.subscribe-input input:valid + .placeholder,
+.subscribe-input input:focus + .placeholder {
+	top: -55%;
+	font-size: 0.7rem;
+	transition-delay: 200ms;
+	color: #000000;
+}
+
+/* ================= FOOTER ================ */
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-top: 1px solid rgb(75, 72, 72);
+	padding-right: 2rem;
+	padding-left: 2rem;
+	width: 100vw;
+	height: 3rem;
+}
+footer .links {
+	display: flex;
+}
+footer .ln {
+	padding-right: 1rem;
+	color: #000000;
+	font-size: 0.7rem;
+}
+footer .icons {
+	display: inline-flex;
+}
+footer .icon {
+	margin: 0.2rem;
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+}
+
+.icon path {
+	fill: #474444;
+}
+
+.icon:hover path {
+	fill: #000000;
+}
+
+/* ================= VERCEL BUTTON ================ */
+
+.subscribe-button {
+	display: flex;
+	padding-bottom: 1rem;
+}
+.button {
+	position: relative;
+	padding: 1px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: transparent;
+	transition: box-shadow 150ms;
+
+}
+
+.background-wrapper {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	display: grid;
+	grid-template-columns: 1fr;
+	z-index: -1;
+}
+
+.background {
+	grid-row-start: 1;
+	grid-column-start: 1;
+}
+
+.background-1 {
+	animation: background-1-animation 8s infinite;
+	background-image: linear-gradient(165deg, hsl(180, 100%, 50%), hsl(210, 100%, 29%));
+	border-radius: 5px;
+}
+.background-1:before {
+	content: "";
+	position: absolute;
+	top: 0.7rem;
+	left: 0.6rem;
+	bottom: 0.7rem;
+	right: 0.6rem;
+	background-image: linear-gradient(165deg, hsl(176, 100%, 50%), hsl(210, 100%, 49%));
+	filter: blur(350px);
+}
+.background-2 {
+	animation: background-2-animation 8s infinite;
+	background-image: linear-gradient(165deg, hsl(0, 100%, 50%), hsl(48, 100%, 50%));
+	border-radius: 5px;
+}
+.background-2:before {
+	content: "";
+	position: absolute;
+	top: 0.7rem;
+	left: 0.6rem;
+	bottom: 0.7rem;
+	right: 0.6rem;
+	background-image: linear-gradient(165deg, hsl(0, 100%, 50%), hsl(48, 100%, 50%));
+	filter: blur(30px);
+}
+.background-3 {
+	animation: background-3-animation 8s infinite;
+	background-image: linear-gradient(165deg, hsl(332, 100%, 50%), hsl(270, 67%, 46%));
+	border-radius: 5px;
+}
+.background-3:before {
+	content: "";
+	position: absolute;
+	top: 0.7rem;
+	left: 0.6rem;
+	bottom: 0.7rem;
+	right: 0.6rem;
+	background-image: linear-gradient(165deg, hsl(330, 100%, 50%), hsl(270, 100%, 49%));
+	filter: blur(30px);
+}
+
+.button-text {
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
+	margin: 1px;
+	border-radius: 5px;
+	padding: 0.75rem 3rem;
+	font-family: "Pathway Extreme";
+	font-size: 1rem;
+	transition: all 100ms;
+}
+
+.button:hover .button-text {
+	transition: all 100ms;
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+}
+
+@keyframes background-1-animation {
+	0%,
+	16.667%,
+	to {
+		opacity: 1;
+	}
+
+	33%,
+	83.333% {
+		opacity: 0;
+	}
+}
+
+@keyframes background-2-animation {
+	0%,
+	16.667%,
+	66.667%,
+	to {
+		opacity: 0;
+	}
+
+	33.333%,
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes background-3-animation {
+	0%,
+	50%,
+	to {
+		opacity: 0;
+	}
+
+	66.667%,
+	83.333% {
+		opacity: 1;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#container {
+		padding-bottom: 3rem;
+	}
+
+	.logo {
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	.heading {
+		margin-bottom: 1rem;
+	}
+
+	.heading h1 {
+		font-size: 5rem;
+	}
+
+	.slogan h2 {
+		font-size: 2rem;
+	}
+}
