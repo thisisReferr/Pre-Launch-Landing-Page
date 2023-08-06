@@ -79,7 +79,7 @@
   box-sizing: border-box;
 }
 
-.hero_left_email_container > input::placeholder{
+.hero_left_email_container > input::placeholder {
   color: var(--primary-dark);
   font-family: "Inter", sans-serif;
   font-size: 16px;
