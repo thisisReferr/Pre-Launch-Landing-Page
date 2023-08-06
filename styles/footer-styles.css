@@ -34,4 +34,6 @@
 }
 .footer_right > img {
   display: inline-block;
+  width: 25px;
+  height: 25px;
 }
