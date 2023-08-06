@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   flex: 0.5;
-  row-gap: 0.5rem;
+  row-gap: 0.8rem;
 }
 
 .hero_left_comming-soon {
@@ -63,14 +63,29 @@
   gap: 1.5rem;
 }
 .hero_left_email_container > input {
-  padding: 1.2rem 1rem;
+  padding: 1rem 1rem;
   background-color: #fff;
+  color: var(--primary-dark);
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
   outline: none;
   border: 1.5px solid var(--border, #e5e7eb);
   width: 100%;
+  font-size: 1rem;
   flex: 0.8;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.hero_left_email_container > input::placeholder{
+  color: var(--primary-dark);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  box-sizing: border-box;
 }
 
 #emailInput {
@@ -100,9 +115,9 @@
   box-shadow: 0px 0px 0px 4px rgba(15, 23, 42, 0.25);
 }
 
-.hero_left_email_container > button {
+.hero_left_email_container > input:nth-child(2) {
   flex: 0.2;
-  padding: 1.4rem 1.7rem;
+  padding: 1rem 1rem;
   background-color: var(--primary);
   color: #fff;
   border: none;
@@ -111,7 +126,7 @@
   cursor: pointer;
 }
 
-.hero_left_email_container > button:hover {
+.hero_left_email_container > input:nth-child(2):hover {
   box-shadow: 0 0 10px var(--primary);
 }
 
