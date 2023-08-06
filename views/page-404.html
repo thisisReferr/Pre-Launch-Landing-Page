@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- fav icon -->
+		<link rel="icon" type="image/x-icon" href="./../public/referR.png" />
+
+		<!-- preload -->
+		<link rel="preload" as="image" href="./../public/404.svg" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="./../styles/page-404.css" />
+		<link rel="stylesheet" href="./../media.css" />
+
+		<!-- footer components -->
+		<script src="./../web-components/footer-links.js" defer></script>
+		<script src="./../web-components/footer-icons.js" defer></script>
+
+		<link rel="manifest" href="./manifest.json" />
+		<title>referR</title>
+	</head>
+	<body>
+		<header id="header">
+			<h1>referR</h1>
+		</header>
+
+		<section>
+			<img src="./../public/404.svg" alt="" />
+			<div class="text-wrapper">
+				<div class="text highlight">Sorry, that page could not be found.</div>
+				<div class="text">The requested page either doesn’t exist or you don’t have access to it.</div>
+			</div>
+		</section>
+
+		<footer id="footer">
+			<footer-links></footer-links>
+			<footer-icons></footer-icons>
+		</footer>
+	</body>
+</html>
