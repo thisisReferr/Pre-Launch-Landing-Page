@@ -5,12 +5,12 @@ class FooterIcons extends HTMLElement {
     if (!iconsData) {
       iconsData = [
         {
-          alt: "email",
-          src: "./public/email.svg",
-        },
-        {
           alt: "linkedin",
           src: "./public/linkedin.svg",
+        },
+        {
+          alt: "email",
+          src: "./public/email.svg",
         },
       ];
     }
@@ -18,7 +18,8 @@ class FooterIcons extends HTMLElement {
     // Generate the markup for the icons
     const iconsMarkup = iconsData
       .map(
-        (icon) => `<a href="#"><img alt="${icon.alt}" src="${icon.src}" /></a>`,
+        (icon) =>
+          `<a href="#"><img width="25px" height="25px" alt="${icon.alt}" src="${icon.src}" /></a>`,
       )
       .join("");
 

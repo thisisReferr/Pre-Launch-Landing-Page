@@ -1,0 +1,9 @@
+#header {
+  display: flex;
+  padding: 2rem 0;
+}
+#header > h1 {
+  color: var(--primary-dark);
+  font-family: "Saira", sans-serif;
+  font-weight: bold;
+}
