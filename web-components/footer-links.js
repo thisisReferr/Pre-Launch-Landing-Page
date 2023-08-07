@@ -6,11 +6,11 @@ class FooterLinks extends HTMLElement {
       linksData = [
         {
           name: "Terms & Conditions",
-          link: "#",
+          link: "/tc",
         },
         {
           name: "Privacy",
-          link: "#",
+          link: "/privacy",
         },
       ];
     }

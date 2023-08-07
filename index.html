@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./media.css" />
     <script src="./web-components/footer-links.js" defer></script>
     <script src="./web-components/footer-icons.js" defer></script>
-    <script src="./index.js" defer></script>
+    <script type="module" src="./utils/router.js"></script>
     <link rel="manifest" href="./manifest.json" />
     <script>
       if ("serviceWorker" in navigator)
@@ -33,35 +33,11 @@
   <body>
     <main id="wrapper">
       <header id="header">
-        <h1>referR</h1>
+        <a href="#/"><h1>referR</h1></a>
       </header>
-      <section id="hero">
-        <div class="hero_left">
-          <div class="hero_left_comming-soon">
-            <div class="line"></div>
-            <p>Coming Soon</p>
-          </div>
-          <div class="hero_left_tagline">
-            <h1>Great teamwork starts with a <span>great team.</span></h1>
-          </div>
-          <div class="hero_left_subtitle">
-            The ultimate platform that connects, refers, and helps you to find
-            your dream job.
-          </div>
-          <form id="notifiedForm">
-            <div class="hero_left_email_container">
-              <input
-                required
-                type="email"
-                id="emailInput"
-                placeholder="Email address"
-              />
-              <input id="getNotified" value="Get Notified!" type="submit" />
-            </div>
-          </form>
-        </div>
-        <div class="hero_right"></div>
-      </section>
+      <div id="inject-template">
+        <hero-section></hero-section>
+      </div>
       <footer id="footer">
         <footer-links></footer-links>
         <footer-icons></footer-icons>
