@@ -2,15 +2,19 @@ class FooterIcons extends HTMLElement {
   connectedCallback() {
     // Retrieve the icons data from an attribute
     let iconsData = JSON.parse(this.getAttribute("icons"));
+
+    //retrive path
+    let path_extension = this.getAttribute("path") || "./public";
+
     if (!iconsData) {
       iconsData = [
         {
           alt: "linkedin",
-          src: "./public/linkedin.svg",
+          src: `${path_extension}/linkedin.svg`,
         },
         {
           alt: "email",
-          src: "./public/email.svg",
+          src: `${path_extension}/email.svg`,
         },
       ];
     }
