@@ -4,17 +4,11 @@
 @import "./footer-styles.css";
 
 :root {
-  --primary-color: #8062d6;
-  --primary-color-light: #dfd8f5;
-  --secondary-color: #2e234e;
-  --background-color: #f1f5f8;
+  --primary-dark: #2e234e;
+  --BG: #f1f5f8;
+  --primary: #8062d6;
   --border-color: #e5e7eb;
-  --white: #ffffff;
 
-  --error: #fe5c5b;
-  --success: #46d5b2;
-
-  --border-radius: 0.25rem;
   --max-width: 1366px;
 }
 
@@ -29,9 +23,9 @@
 body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  background-color: var(--background-color);
-  color: var(--secondary-color);
-  width: 90vw;
+  background-color: var(--BG);
+  color: var(--primary-dark);
+
   max-width: var(--max-width);
   display: flex;
   flex-direction: column;
@@ -63,27 +57,27 @@ section img {
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  color: #7564ac;
+  color: var(--primary);
 }
 
 .highlight {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--primary-dark);
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--primary-dark);
 }
 
-img[src*="./public/linkedin.svg"] {
+/* img[src*="./public/linkedin.svg"] {
   content: url("./../public/linkedin.svg");
 }
 
 img[src*="./public/email.svg"] {
   content: url("./../public/email.svg");
-}
+} */
 
 @media only screen and (min-width: 768px) {
   section {
@@ -104,6 +98,7 @@ img[src*="./public/email.svg"] {
     margin-left: auto;
     margin-right: auto;
     padding: 0 !important;
+    width: 90vw;
   }
   section {
     flex-direction: row-reverse;
