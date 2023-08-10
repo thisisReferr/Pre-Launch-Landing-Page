@@ -89,4 +89,6 @@ class HeroSection extends HTMLElement {
 }
 
 // Define the custom element
-customElements.define("hero-section", HeroSection);
+if (!customElements.get("hero-section")) {
+  customElements.define("hero-section", HeroSection);
+}

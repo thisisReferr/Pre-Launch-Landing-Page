@@ -21,7 +21,11 @@
     <link rel="preload" as="image" href="./public/404.svg" />
     <script src="./web-components/footer-links.js" defer></script>
     <script src="./web-components/footer-icons.js" defer></script>
-    <script type="module" src="./utils/router.js"></script>
+    <script
+      src="./web-components/hero-component/hero-section.js"
+      defer
+    ></script>
+    <script type="module" defer src="./utils/router.js"></script>
     <link rel="manifest" href="./manifest.json" />
     <script>
       if ("serviceWorker" in navigator)
@@ -35,7 +39,7 @@
         <a href="#/"><h1>referR</h1></a>
       </header>
       <div id="inject-template">
-        <!-- Leave this empty; router will handle injecting the right component -->
+        <hero-section></hero-section>
       </div>
       <footer id="footer">
         <footer-links></footer-links>

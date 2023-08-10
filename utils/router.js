@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!window.location.hash) {
     window.location.hash = "/"; // default route
   }
-  loadComponent();
 });
 
 function componentNameFromHash(hash) {
