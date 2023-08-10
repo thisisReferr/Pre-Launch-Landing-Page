@@ -6,6 +6,6 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /.+\/web-components\/.+\.js$/,  // Regular expression literal
+  /.+\/web-components\/.+\.js$/, // Regular expression literal
   new workbox.strategies.StaleWhileRevalidate(),
 );
