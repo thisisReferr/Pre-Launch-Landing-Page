@@ -10,7 +10,7 @@ const routes = {
 };
 
 function loadComponent() {
-  const hash = window.location.hash.slice(1); // remove the '#' at the beginning
+  const hash = window.location.hash.slice(1);
   let loadModule = routes[hash];
 
   if (!loadModule) {

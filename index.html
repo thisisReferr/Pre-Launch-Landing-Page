@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Analytics script commented out for now -->
     <!-- <script
       async
       src="https://analytics.umami.is/script.js"
@@ -10,8 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The ultimate platform that connects, refers, 
-    and helps you to find your dream job."
+      content="The ultimate platform that connects, refers, and helps you to find your dream job."
     />
     <meta name="theme-color" content="#2E234E" />
     <link rel="stylesheet" href="./style.css" />
@@ -19,8 +19,6 @@
     <link rel="preload" as="image" href="./public/hero-image.svg" />
     <link rel="icon" type="image/x-icon" href="./public/referR.png" />
     <link rel="preload" as="image" href="./public/404.svg" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./media.css" />
     <script src="./web-components/footer-links.js" defer></script>
     <script src="./web-components/footer-icons.js" defer></script>
     <script type="module" src="./utils/router.js"></script>
@@ -37,7 +35,7 @@
         <a href="#/"><h1>referR</h1></a>
       </header>
       <div id="inject-template">
-        <hero-section></hero-section>
+        <!-- Leave this empty; router will handle injecting the right component -->
       </div>
       <footer id="footer">
         <footer-links></footer-links>

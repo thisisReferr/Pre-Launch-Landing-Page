@@ -1,13 +1,29 @@
 class PrivacySection extends HTMLElement {
-  async connectedCallback() {
-    // Fetch the external HTML template
-    const response = await fetch(
-      "./web-components/privacy-component/privacy-template.html",
-    );
-    const template = await response.text();
+  static cache = {
+    html: null,
+    css: null,
+  };
 
-    // Set the innerHTML of the component using the template
-    this.innerHTML = template;
+  async connectedCallback() {
+    // Check cache first
+    if (!PrivacySection.cache.html || !PrivacySection.cache.css) {
+      const [htmlResponse, cssResponse] = await Promise.all([
+        fetch("./web-components/privacy-component/privacy-template.html"),
+        fetch("./styles/privacy-style.css"),
+      ]);
+
+      PrivacySection.cache.html = await htmlResponse.text();
+      PrivacySection.cache.css = await cssResponse.text();
+    }
+
+    // Set the innerHTML of the component using the cached template
+    const style = document.createElement("style");
+    style.textContent = PrivacySection.cache.css;
+
+    // Shadow DOM encapsulation, to isolate styles
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = PrivacySection.cache.html;
+    this.shadowRoot.appendChild(style);
   }
 }
 
