@@ -20,7 +20,7 @@ section > .text-wrapper {
 }
 
 #not-found {
-  background-image: url("./public/404.svg");
+  background-image: url("./public/404-NF.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
