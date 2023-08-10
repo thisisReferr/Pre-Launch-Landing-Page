@@ -15,7 +15,7 @@
   --BG: #f1f5f8;
   --primary: #8062d6;
   --border-color: #e5e7eb;
-  --section-gap: 2.1rem;
+  --section-gap: 1rem;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 #wrapper {
   display: flex;
   flex-direction: column;
-  /* gap: var(--section-gap); */
+  gap: var(--section-gap);
   height: 100dvh;
   justify-content: space-between;
 }
