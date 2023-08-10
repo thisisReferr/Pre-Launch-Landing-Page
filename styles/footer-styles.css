@@ -37,3 +37,13 @@
   width: 25px;
   height: 25px;
 }
+
+@media (width<=899px) {
+  #footer {
+    padding: 20px 0;
+  }
+
+  #header {
+    padding-bottom: 0;
+  }
+}

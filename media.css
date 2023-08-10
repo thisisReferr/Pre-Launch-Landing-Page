@@ -9,15 +9,8 @@
     padding: 0 64px;
   }
 }
-@media (899px>=width) {
+@media (width<=899px) {
   body {
     padding: 0 37px;
-  }
-  #footer {
-    padding: 20px 0;
-  }
-
-  #header {
-    padding-bottom: 0;
   }
 }

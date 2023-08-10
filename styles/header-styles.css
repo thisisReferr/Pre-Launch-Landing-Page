@@ -10,3 +10,9 @@
   font-family: "Saira", sans-serif;
   font-weight: bold;
 }
+
+@media (width<=899px) {
+  #header {
+    padding-bottom: 0;
+  }
+}
