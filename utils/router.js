@@ -10,8 +10,9 @@ const routes = {
 };
 
 function loadComponent(hash = window.location.hash.slice(1)) {
+  console.log("In loadComponent. Hash:", hash);
   let loadModule = routes[hash];
-
+  console.log("Module to load:", loadModule);
   if (!loadModule) {
     console.error("Component not found for route:", hash);
     window.location.hash = "/404";
@@ -19,11 +20,15 @@ function loadComponent(hash = window.location.hash.slice(1)) {
     return;
   }
 
-  loadModule().then(() => {
-    const injectionSection = document.getElementById("inject-template");
-    const componentName = componentNameFromHash(hash);
-    injectionSection.innerHTML = `<${componentName}></${componentName}>`;
-  });
+  loadModule()
+    .then(() => {
+      const injectionSection = document.getElementById("inject-template");
+      const componentName = componentNameFromHash(hash);
+      injectionSection.innerHTML = `<${componentName}></${componentName}>`;
+    })
+    .catch((error) => {
+      console.error("Error loading the component:", error);
+    });
 }
 
 function componentNameFromHash(hash) {
