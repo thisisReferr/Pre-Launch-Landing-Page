@@ -15,19 +15,24 @@ function loadComponent() {
 
   if (!loadModule) {
     console.error("Component not found for route:", hash);
-    loadModule = routes["/404"]; // default to 404 component
+    window.location.replace(window.location.origin + "/#/404"); // redirect to 404 page
+    return;
   }
 
   loadModule().then(() => {
     const injectionSection = document.getElementById("inject-template");
-    const componentName =
-      (hash && componentNameFromHash(hash)) || "not-found-section";
+    const componentName = componentNameFromHash(hash);
     injectionSection.innerHTML = `<${componentName}></${componentName}>`;
   });
 }
 
 window.addEventListener("hashchange", loadComponent);
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname !== "/") {
+    window.location.replace(window.location.origin + "/#/404");
+    return;
+  }
+
   if (!window.location.hash) {
     window.location.hash = "/"; // default route
   }
