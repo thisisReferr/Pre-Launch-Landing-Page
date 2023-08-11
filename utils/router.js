@@ -43,18 +43,24 @@ window.addEventListener("hashchange", loadComponent);
 
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
+  console.log("Current Path:", currentPath);
+  console.log("Current Hash:", window.location.hash);
 
   if (currentPath === "/" || currentPath === "") {
+    console.log("At root...");
     if (!window.location.hash) {
-      window.location.hash = "/"; // default route
+      console.log("No hash, setting default...");
+      window.location.hash = "/";
       loadComponent("/");
     } else {
       loadComponent();
     }
   } else if (routes[currentPath]) {
+    console.log("Known route. Setting hash...");
     window.location.hash = currentPath;
     loadComponent(currentPath);
   } else {
+    console.log("Unknown route. Redirecting to 404...");
     window.location.hash = "/404";
     loadComponent("/404");
   }
