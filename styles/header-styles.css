@@ -1,5 +1,13 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 #header {
   display: flex;
+  padding: 20px 0;
 }
 #header > a {
   text-decoration: none;

@@ -13,4 +13,13 @@
   body {
     padding: 0 37px;
   }
+  #footer {
+    padding: 10px 0 !important;
+  }
+}
+
+@media (width<=330px) {
+  #footer {
+    flex-direction: column;
+  }
 }

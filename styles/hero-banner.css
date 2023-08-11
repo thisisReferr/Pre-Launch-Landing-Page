@@ -1,3 +1,10 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 #hero {
   display: flex;
   gap: 1rem;
@@ -153,6 +160,9 @@
     gap: 1rem;
     align-items: center;
   }
+  .hero_left_tagline > h1 {
+    font-size: 2.5rem;
+  }
   .hero_left_email_container > button {
     padding: 1.4rem 3rem;
   }
@@ -161,5 +171,6 @@
   }
   #hero > .hero_right {
     min-height: 435px;
+    display: none;
   }
 }

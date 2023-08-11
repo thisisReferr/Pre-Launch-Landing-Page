@@ -21,12 +21,25 @@
 body {
   background-color: var(--BG);
   font-size: 16px;
-  min-width: 320px;
+  height: 100dvh;
 }
 #wrapper {
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
-  height: 100dvh;
+  height: 100%;
   justify-content: space-between;
+}
+
+#footer > * {
+  display: flex;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid var(--border-color);
+  /* padding: 20px 32px; #as per design */
+  padding: 20px 32px;
+  align-items: center;
 }
