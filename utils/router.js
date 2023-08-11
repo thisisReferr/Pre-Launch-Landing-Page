@@ -16,6 +16,7 @@ function loadComponent() {
   if (!loadModule) {
     console.error("Component not found for route:", hash);
     window.location.replace(window.location.origin + "/#/404"); // redirect to 404 page
+    loadComponent();
     return;
   }
 
@@ -30,7 +31,6 @@ window.addEventListener("hashchange", loadComponent);
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname !== "/") {
     window.location.replace(window.location.origin + "/#/404");
-    loadComponent();
     return;
   }
 
