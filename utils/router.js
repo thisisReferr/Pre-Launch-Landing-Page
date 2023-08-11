@@ -9,10 +9,20 @@ const routes = {
   "/404": () => import("./../web-components/404-component/404-section.js"),
 };
 
-function loadComponent(hash = window.location.hash.slice(1)) {
-  console.log("In loadComponent. Hash:", hash);
+function loadComponent(input = window.location.hash.slice(1)) {
+  let hash;
+
+  // Check if the input is a HashChangeEvent
+  if (input instanceof Event) {
+    hash = window.location.hash.slice(1);
+  } else {
+    hash = input;
+  }
+
+  console.log("Processed hash:", hash);
+
   let loadModule = routes[hash];
-  console.log("Module to load:", loadModule);
+
   if (!loadModule) {
     console.error("Component not found for route:", hash);
     window.location.hash = "/404";
@@ -20,15 +30,11 @@ function loadComponent(hash = window.location.hash.slice(1)) {
     return;
   }
 
-  loadModule()
-    .then(() => {
-      const injectionSection = document.getElementById("inject-template");
-      const componentName = componentNameFromHash(hash);
-      injectionSection.innerHTML = `<${componentName}></${componentName}>`;
-    })
-    .catch((error) => {
-      console.error("Error loading the component:", error);
-    });
+  loadModule().then(() => {
+    const injectionSection = document.getElementById("inject-template");
+    const componentName = componentNameFromHash(hash);
+    injectionSection.innerHTML = `<${componentName}></${componentName}>`;
+  });
 }
 
 function componentNameFromHash(hash) {
