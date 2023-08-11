@@ -30,6 +30,7 @@ window.addEventListener("hashchange", loadComponent);
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname !== "/") {
     window.location.replace(window.location.origin + "/#/404");
+    loadComponent();
     return;
   }
 
