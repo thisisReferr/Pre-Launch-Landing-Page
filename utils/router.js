@@ -29,7 +29,7 @@ function loadComponent(hash = window.location.hash.slice(1)) {
 window.addEventListener("hashchange", loadComponent);
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.pathname !== "/") {
+  if (window.location.pathname !== "/" && window.location.pathname !== "") {
     window.location.hash = "/404";
     loadComponent("/404");
     return;
