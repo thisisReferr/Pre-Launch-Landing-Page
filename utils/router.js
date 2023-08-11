@@ -26,21 +26,6 @@ function loadComponent(hash = window.location.hash.slice(1)) {
   });
 }
 
-window.addEventListener("hashchange", loadComponent);
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.pathname !== "/" && window.location.pathname !== "") {
-    window.location.hash = "/404";
-    loadComponent("/404");
-    return;
-  }
-
-  if (!window.location.hash) {
-    window.location.hash = "/"; // default route
-    loadComponent("/");
-  }
-});
-
 function componentNameFromHash(hash) {
   switch (hash) {
     case "/":
@@ -53,3 +38,24 @@ function componentNameFromHash(hash) {
       return "not-found-section";
   }
 }
+
+window.addEventListener("hashchange", loadComponent);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname;
+
+  if (currentPath === "/" || currentPath === "") {
+    if (!window.location.hash) {
+      window.location.hash = "/"; // default route
+      loadComponent("/");
+    } else {
+      loadComponent();
+    }
+  } else if (routes[currentPath]) {
+    window.location.hash = currentPath;
+    loadComponent(currentPath);
+  } else {
+    window.location.hash = "/404";
+    loadComponent("/404");
+  }
+});
