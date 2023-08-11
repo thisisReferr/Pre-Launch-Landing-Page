@@ -9,14 +9,13 @@ const routes = {
   "/404": () => import("./../web-components/404-component/404-section.js"),
 };
 
-function loadComponent() {
-  const hash = window.location.hash.slice(1);
+function loadComponent(hash = window.location.hash.slice(1)) {
   let loadModule = routes[hash];
 
   if (!loadModule) {
     console.error("Component not found for route:", hash);
-    window.location.replace(window.location.origin + "/#/404"); // redirect to 404 page
-    loadComponent();
+    window.location.hash = "/404";
+    loadComponent("/404");
     return;
   }
 
@@ -28,14 +27,17 @@ function loadComponent() {
 }
 
 window.addEventListener("hashchange", loadComponent);
+
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname !== "/") {
-    window.location.replace(window.location.origin + "/#/404");
+    window.location.hash = "/404";
+    loadComponent("/404");
     return;
   }
 
   if (!window.location.hash) {
     window.location.hash = "/"; // default route
+    loadComponent("/");
   }
 });
 
