@@ -47,6 +47,6 @@ function componentNameFromHash(hash) {
     case "/tc":
       return "tc-section";
     default:
-      return "";
+      return "not-found-section";
   }
 }
