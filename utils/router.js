@@ -19,7 +19,6 @@ function loadComponent(input = window.location.hash.slice(1)) {
     hash = input;
   }
 
-
   let loadModule = routes[hash];
 
   if (!loadModule) {
