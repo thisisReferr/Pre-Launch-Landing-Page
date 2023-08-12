@@ -1,3 +1,10 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 #hero {
   display: flex;
   gap: 1rem;
@@ -137,8 +144,33 @@
 }
 
 .hero_right {
-  background-image: url("./../public/hero-image.svg");
+  background-image: url("./public/hero-image.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (899px>=width) {
+  #hero {
+    flex-direction: column-reverse;
+  }
+  .hero_left_email_container {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+  .hero_left_tagline > h1 {
+    font-size: 2.5rem;
+  }
+  .hero_left_email_container > button {
+    padding: 1.4rem 3rem;
+  }
+  #hero > .hero_left {
+    row-gap: 1.5rem;
+  }
+  #hero > .hero_right {
+    min-height: 435px;
+    display: none;
+  }
 }

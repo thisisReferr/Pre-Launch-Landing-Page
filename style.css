@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap");
 @import "./styles/header-styles.css";
-@import "./styles/hero-banner.css";
 @import "./styles/footer-styles.css";
+/* @import "./styles/404-style.css"; */
 
 /* Global Styles */
 *,
@@ -17,18 +15,31 @@
   --BG: #f1f5f8;
   --primary: #8062d6;
   --border-color: #e5e7eb;
-  --section-gap: 2.1rem;
+  --section-gap: 1rem;
 }
 
 body {
   background-color: var(--BG);
   font-size: 16px;
-  min-width: 320px;
+  height: 100dvh;
 }
 #wrapper {
   display: flex;
   flex-direction: column;
-  /* gap: var(--section-gap); */
-  height: 100dvh;
+  gap: var(--section-gap);
+  height: 100%;
   justify-content: space-between;
+}
+
+#footer > * {
+  display: flex;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid var(--border-color);
+  /* padding: 20px 32px; #as per design */
+  padding: 20px 32px;
+  align-items: center;
 }

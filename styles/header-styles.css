@@ -1,9 +1,25 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 #header {
   display: flex;
-  padding: 2rem 0;
+  padding: 20px 0;
 }
-#header > h1 {
+#header > a {
+  text-decoration: none;
+}
+#header > a > h1 {
   color: var(--primary-dark);
   font-family: "Saira", sans-serif;
   font-weight: bold;
+}
+
+@media (width<=899px) {
+  #header {
+    padding-bottom: 0;
+  }
 }

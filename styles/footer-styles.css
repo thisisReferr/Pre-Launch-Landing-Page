@@ -1,18 +1,16 @@
 /* FOOTER--STYLES */
-
-#footer {
-  display: flex;
-  justify-content: space-between;
-  border-top: 2px solid var(--border-color);
-  /* padding: 20px 32px; #as per design */
-  padding: 20px 32px;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
 }
-
 /* Footer-Left */
 
 .footer_left {
   display: flex;
   gap: 32px;
+  justify-content: space-between;
 }
 .footer_left > a {
   text-decoration: none;
@@ -36,4 +34,24 @@
   display: inline-block;
   width: 25px;
   height: 25px;
+}
+
+@media (width<=899px) {
+  .footer_left > a > p {
+    font-size: 0.8rem;
+  }
+  .footer_left {
+    gap: 0.5rem;
+  }
+}
+
+@media (width<=330px) {
+  .footer_right {
+    gap: 0;
+    justify-content: space-between;
+  }
+  .footer_right > a {
+    display: inline-block;
+    margin: 0.2rem 1rem;
+  }
 }
