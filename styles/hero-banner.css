@@ -70,7 +70,7 @@
   gap: 1.5rem;
 }
 .hero_left_email_container > input {
-  padding: 1rem 1rem;
+  padding: 1rem;
   background-color: #fff;
   color: var(--primary-dark);
   font-style: normal;
