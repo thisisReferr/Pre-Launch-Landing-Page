@@ -1,10 +1,12 @@
+import { APIService } from "../../utils/apiService";
 class HeroSection extends HTMLElement {
   static cache = {
     html: null,
     css: null,
   };
-
+  #api = null;
   async connectedCallback() {
+    this.#api = new APIService();
     // Check cache first
     if (!HeroSection.cache.html || !HeroSection.cache.css) {
       const [htmlResponse, cssResponse] = await Promise.all([
@@ -53,7 +55,7 @@ class HeroSection extends HTMLElement {
     }
   }
 
-  getNotifiedEventHandler(e) {
+  async getNotifiedEventHandler(e) {
     e.preventDefault();
     const emailInput = this.shadowRoot.getElementById("emailInput");
     const { value } = emailInput;
@@ -66,6 +68,14 @@ class HeroSection extends HTMLElement {
 
     if (this.emailExists(email)) {
       emailInput.classList.replace("valid", "email-exists");
+      return;
+    }
+    try {
+      await this.#api.collectEmail(email);
+    } catch (e) {
+      console.error(
+        "Failed to collect email: " + email + " Because of error: " + e.message,
+      );
     }
   }
 
