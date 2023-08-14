@@ -1,3 +1,42 @@
+class APIService {
+  #headers = {};
+  #BASE_URL = "https://referr-test-deploy.abhigyanbaruah1.workers.dev";
+
+  constructor(headers = {}) {
+    this.#headers = new Headers(headers);
+  }
+
+  async collectEmail(email) {
+    const endPoint = "/IDM/CreateRegisteredUser";
+    const REQUEST_URL = this.#BASE_URL + endPoint;
+    const BODY = { email };
+
+    try {
+      const response = await fetch(REQUEST_URL, {
+        method: "POST",
+        body: JSON.stringify(BODY),
+        headers: this.#headers,
+        mode: "no-cors", // <-- Use this if needed, but be aware of its limitations.
+      });
+
+      // Check if the response is successful (status code 200-299)
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(JSON.stringify(data));
+      return data;
+    } catch (error) {
+      console.error(
+        "There was a problem with the fetch operation:",
+        error.message,
+      );
+      throw error; // You can re-throw the error if you want to handle it elsewhere.
+    }
+  }
+}
+
 class HeroSection extends HTMLElement {
   static cache = {
     html: null,
@@ -66,7 +105,10 @@ class HeroSection extends HTMLElement {
 
     if (this.emailExists(email)) {
       emailInput.classList.replace("valid", "email-exists");
+      return;
     }
+    const api = new APIService({});
+    api.collectEmail(email);
   }
 
   isValidEmail(email) {
