@@ -1,0 +1,45 @@
+@import "./styles/header-styles.css";
+@import "./styles/footer-styles.css";
+/* @import "./styles/404-style.css"; */
+
+/* Global Styles */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-dark: #2e234e;
+  --BG: #f1f5f8;
+  --primary: #8062d6;
+  --border-color: #e5e7eb;
+  --section-gap: 1rem;
+}
+
+body {
+  background-color: var(--BG);
+  font-size: 16px;
+  height: 100dvh;
+}
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  height: 100%;
+  justify-content: space-between;
+}
+
+#footer > * {
+  display: flex;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid var(--border-color);
+  /* padding: 20px 32px; #as per design */
+  padding: 20px 32px;
+  align-items: center;
+}

@@ -1,0 +1,25 @@
+@media (width>1280px) {
+  body {
+    padding: 0 17rem;
+  }
+}
+
+@media (1280px>=width>899px) {
+  body {
+    padding: 0 64px;
+  }
+}
+@media (width<=899px) {
+  body {
+    padding: 0 37px;
+  }
+  #footer {
+    padding: 10px 0 !important;
+  }
+}
+
+@media (width<=330px) {
+  #footer {
+    flex-direction: column;
+  }
+}

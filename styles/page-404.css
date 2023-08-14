@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Saira:wght@300;700&display=swap");
+
+@import "./header-styles.css";
+@import "./footer-styles.css";
+
+:root {
+  --primary-dark: #2e234e;
+  --BG: #f1f5f8;
+  --primary: #8062d6;
+  --border-color: #e5e7eb;
+
+  --max-width: 1366px;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background-color: var(--BG);
+  color: var(--primary-dark);
+
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+  min-height: 100vh;
+  margin: auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section img {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.text {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.highlight {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+a {
+  color: var(--primary-dark);
+}
+
+/* img[src*="./public/linkedin.svg"] {
+  content: url("./../public/linkedin.svg");
+}
+
+img[src*="./public/email.svg"] {
+  content: url("./../public/email.svg");
+} */
+
+@media only screen and (min-width: 768px) {
+  section {
+    width: 608px;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .highlight {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1175px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 !important;
+    width: 90vw;
+  }
+  section {
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    margin-top: 0rem;
+  }
+
+  section img {
+    width: 45%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .text-wrapper {
+    width: 45%;
+    min-width: 530px;
+    margin: 0;
+  }
+
+  .text {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .highlight {
+    font-size: 3.5rem;
+  }
+}

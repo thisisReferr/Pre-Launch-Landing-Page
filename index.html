@@ -1,10 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The ultimate platform that connects, refers, and helps you to find your dream job."
+    />
+    <meta name="theme-color" content="#2E234E" />
+    <script
+      async
+      src="https://analytics.umami.is/script.js"
+      data-website-id="bac355f1-41a0-48c9-a33f-c7bf53fe2c56"
+      data-domains="referr.pro"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preload" as="image" href="./public/hero-image.svg" />
+    <link rel="icon" type="image/x-icon" href="./public/referR.png" />
+    <link rel="stylesheet" href="./media.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./web-components/footer-links.js" defer></script>
+    <script src="./web-components/footer-icons.js" defer></script>
+    <script
+      src="./web-components/hero-component/hero-section.js"
+      defer
+    ></script>
+    <script type="module" defer src="./utils/router.js"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("./service-worker.js");
+    </script>
     <title>referR</title>
-</head>
-<body>
-    landing page body
-</body>
+  </head>
+  <body>
+    <main id="wrapper">
+      <header id="header">
+        <a href="#/"><h1>referR</h1></a>
+      </header>
+      <div id="inject-template">
+        <hero-section></hero-section>
+      </div>
+      <footer id="footer">
+        <footer-links></footer-links>
+        <footer-icons></footer-icons>
+      </footer>
+    </main>
+  </body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700;800&family=Saira:wght@300;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 </html>
