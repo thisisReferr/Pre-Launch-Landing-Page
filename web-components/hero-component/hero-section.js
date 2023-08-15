@@ -77,6 +77,8 @@ class HeroSection extends HTMLElement {
         "Failed to collect email: " + email + " Because of error: " + e.message,
       );
     }
+    const api = new APIService({});
+    api.collectEmail(email);
   }
 
   isValidEmail(email) {
