@@ -1,5 +1,5 @@
 export class APIService {
-  #BASE_URL = "http://127.0.0.1:8787";
+  #BASE_URL = "https://referr-test-deploy.abhigyanbaruah1.workers.dev";
   #DEFAULT_HEADERS = {
     Accept: "*/*",
     "Content-Type": "application/json",
