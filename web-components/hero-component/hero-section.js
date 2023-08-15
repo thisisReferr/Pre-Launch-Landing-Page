@@ -1,4 +1,4 @@
-import { APIService } from "../../utils/apiService";
+import { APIService } from "../../utils/apiService.js";
 class HeroSection extends HTMLElement {
   static cache = {
     html: null,
