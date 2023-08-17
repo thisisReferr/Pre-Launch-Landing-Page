@@ -1,10 +1,13 @@
 import { APIService } from "../../utils/apiService.js";
+
 class HeroSection extends HTMLElement {
   static cache = {
     html: null,
     css: null,
   };
+
   #api = null;
+
   async connectedCallback() {
     this.#api = new APIService();
     // Check cache first
@@ -30,6 +33,7 @@ class HeroSection extends HTMLElement {
     // Events listeners
     const emailInput = this.shadowRoot.getElementById("emailInput");
     const notifiedForm = this.shadowRoot.getElementById("notifiedForm");
+
     emailInput.addEventListener("input", this.handleInputEvent.bind(this));
     emailInput.addEventListener("focus", this.handleFocusEvent.bind(this));
     emailInput.addEventListener("blur", this.handleBlurEvent.bind(this));
@@ -41,14 +45,10 @@ class HeroSection extends HTMLElement {
 
   handleInputEvent(e) {
     const emailInput = e.target;
-    const { value } = emailInput;
-    const email = value.trim();
-
+    const email = emailInput.value.trim();
     emailInput.classList.remove("valid", "invalid", "email-exists", "active");
 
-    if (email === "") return;
-
-    if (emailInput.validity.valid) {
+    if (email && emailInput.validity.valid) {
       emailInput.classList.add("valid");
     } else {
       emailInput.classList.add("invalid");
@@ -58,37 +58,55 @@ class HeroSection extends HTMLElement {
   async getNotifiedEventHandler(e) {
     e.preventDefault();
     const emailInput = this.shadowRoot.getElementById("emailInput");
-    const { value } = emailInput;
-    const email = value.trim();
+    const email = emailInput.value.trim();
 
     if (!this.isValidEmail(email)) {
       emailInput.classList.add("invalid");
+      this.showToast({
+        title: "Invalid email",
+        message: "The Entered Email Is not a valid email",
+        accent: "#ef4444",
+        ioc: "fa-exclamation",
+      });
       return;
     }
 
-    if (this.emailExists(email)) {
-      emailInput.classList.replace("valid", "email-exists");
-      return;
-    }
     try {
-      await this.#api.collectEmail(email);
+      const { statusCode, data } = await this.#api.collectEmail(email);
+      if (statusCode === 200 && data) {
+        this.showToast({
+          title: "Success",
+          message: "You're all set! We'll keep you updated on our launch.",
+          accent: "#4070f4",
+          ioc: "fa-check",
+        });
+        return;
+      }
+
+      if (statusCode === 422) {
+        emailInput.classList.replace("valid", "email-exists");
+        this.showToast({
+          title: "Email Already Exists",
+          message:
+            "Looks like you're already on our list. Expect exciting news soon!",
+          accent: "#0f172a",
+          ioc: "fa-bell",
+        });
+      }
     } catch (e) {
-      console.error(
-        "Failed to collect email: " + email + " Because of error: " + e.message,
-      );
+      this.showToast({
+        title: "Error",
+        message: "Couldn't Add Email To Waiting List",
+        accent: "#ef4444",
+        ioc: "fa-exclamation",
+      });
+      console.error(`Failed to collect email: ${email}. Error: ${e.message}`);
     }
-    const api = new APIService({});
-    api.collectEmail(email);
   }
 
   isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return emailRegex.test(email);
-  }
-
-  emailExists(email) {
-    const existingEmails = ["example@example.com"];
-    return existingEmails.includes(email);
   }
 
   handleFocusEvent(e) {
@@ -98,9 +116,22 @@ class HeroSection extends HTMLElement {
   handleBlurEvent(e) {
     e.target.classList.remove("active");
   }
+
+  showToast({ title, message, accent = "#4070f4", ioc }) {
+    const toast = document.createElement("custom-toast");
+    toast.setAttribute("title", title);
+    toast.setAttribute("message", message);
+    toast.setAttribute("accent-color", accent);
+    toast.setAttribute("icon-class", `fas fa-solid ${ioc}`);
+    document.body.appendChild(toast);
+    toast.click();
+
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 5300);
+  }
 }
 
-// Define the custom element
 if (!customElements.get("hero-section")) {
   customElements.define("hero-section", HeroSection);
 }

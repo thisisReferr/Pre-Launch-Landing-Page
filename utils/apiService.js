@@ -39,13 +39,16 @@ export class APIService {
   }
 
   async _handleResponse(response) {
-    if (!response.ok) {
+    if (![422, 200].includes(response.status)) {
       const errorMessage = await response.text();
       console.error(
         `HTTP error! Status: ${response.status}, Message: ${errorMessage}`,
       );
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    return await response.json();
+    return {
+      statusCode: response.status,
+      data: await response.json(),
+    };
   }
 }
