@@ -52,17 +52,21 @@ class CustomToast extends HTMLElement {
                     display: flex;
                     flex-direction: column;
                     margin: 0 20px;
+                    font-family: "Inter", sans-serif;
                 }
 
                 .message .text {
-                    font-size: 16px;
+                    font-size: 1rem;
                     font-weight: 400;
                     color: #666666;
+                    font-family: "Inter", sans-serif;
                 }
 
                 .message .text.text-1 {
                     font-weight: 600;
                     color: #333;
+                    font-family: "Inter", sans-serif;
+                    font-size: 1.25rem;
                 }
 
                 .close {
