@@ -145,7 +145,8 @@ class CustomToast extends HTMLElement {
       }, 5300);
     });
 
-    closeIcon.addEventListener("click", () => {
+    closeIcon.addEventListener("click", (e) => {
+      e.stopPropagation();
       toast.classList.remove("active");
       setTimeout(() => {
         progress.classList.remove("active");

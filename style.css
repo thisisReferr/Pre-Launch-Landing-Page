@@ -67,6 +67,9 @@ body {
   content: "\f0f3";
   font-family: "Font Awesome 6 Free", sans-serif;
 }
+.fa-xmark::before {
+  content: "\f00d";
+}
 .fas,
 .fa-solid {
   font-family: "Font Awesome 6 Free", sans-serif;
