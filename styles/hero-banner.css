@@ -134,6 +134,7 @@
   font-size: 1rem;
   box-sizing: border-box;
   position: relative;
+  display: block;
 }
 
 .hero_left_email_container > button:hover {
@@ -197,6 +198,7 @@
   }
   .hero_left_email_container > button {
     padding: 1.4rem 3rem;
+    width: 100%;
   }
   #hero > .hero_left {
     row-gap: 1.5rem;
