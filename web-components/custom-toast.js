@@ -109,6 +109,42 @@ class CustomToast extends HTMLElement {
                         right: 100%;
                     }
                 }
+
+                @media (480px>=width) {
+                  .toast{
+                    padding:5px;
+                    top: 25px;
+                    right: 5px;
+                  }
+                  .message .text {
+                    font-size: .8rem;
+                  }
+                  .message .text.text-1 {
+                    font-size: .9rem;
+                  }
+                  .close{
+                    top: 2px;
+                    right: 5px;
+                  }
+                }
+
+                @media (481px>=width>768px) {
+                  .toast{
+                    padding: 20px 35px 20px 25px;
+                    top: 25px;
+                    right: 5px;
+                  }
+                  .message .text {
+                    font-size: .8rem;
+                  }
+                  .message .text.text-1 {
+                    font-size: .9rem;
+                  }
+                  .close{
+                    top: 2px;
+                    right: 5px;
+                  }
+                }
             </style>
 
             <div class="toast">
