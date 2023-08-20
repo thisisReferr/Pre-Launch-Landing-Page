@@ -122,7 +122,7 @@
   box-shadow: 0px 0px 0px 4px rgba(15, 23, 42, 0.25);
 }
 
-.hero_left_email_container > input:nth-child(2) {
+.hero_left_email_container > button {
   flex: 0.2;
   padding: 1rem;
   background-color: var(--primary);
@@ -131,12 +131,45 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
 }
 
-.hero_left_email_container > input:nth-child(2):hover {
+.hero_left_email_container > button:hover {
   box-shadow: 0 0 10px var(--primary);
 }
+.button--loading {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.button--loading::after {
+  content: "";
+  position: absolute;
+  height: 40%;
+  aspect-ratio: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+  -webkit-animation: button-loading-spinner 1s ease infinite;
+}
 
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
 /* Hero-Image */
 
 #hero > .hero_right {
@@ -165,6 +198,7 @@
   }
   .hero_left_email_container > button {
     padding: 1.4rem 3rem;
+    width: 100%;
   }
   #hero > .hero_left {
     row-gap: 1.5rem;
