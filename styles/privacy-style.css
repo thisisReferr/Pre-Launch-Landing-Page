@@ -9,7 +9,7 @@
 #privacy {
   display: flex;
   flex-direction: column;
-  row-gap: 5rem;
+  row-gap: 1rem;
 }
 
 #privacy > .privacy_header {
@@ -43,7 +43,7 @@
   line-height: 24px; /* 150% */
 }
 
-.privacy_point > h1 {
+.privacy_point > div:first-child> h1 {
   color: var(--primary-dark);
   font-size: 24px;
   font-style: normal;
@@ -80,4 +80,13 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+@media (899px>=width) {
+  .privacy_point > .privacy_point_content > ul > li {
+   margin-left: 0;
+  }
+  .privacy_point >div:first-child > h1{
+    font-size: .94rem;
+  }
 }
