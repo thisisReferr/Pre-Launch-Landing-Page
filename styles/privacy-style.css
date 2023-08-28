@@ -3,4 +3,90 @@
 *::before {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+#privacy {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+#privacy > .privacy_header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+#privacy > .privacy_header > h1 {
+  color: var(--primary-dark);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 120% */
+}
+
+#privacy > .privacy_header > p {
+  color: var(--primary-dark);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+#privacy_context {
+  color: var(--primary-dark);
+  text-align: justify;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.privacy_point > div:first-child > h1 {
+  color: var(--primary-dark);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+}
+
+.privacy_point > p,
+li {
+  color: var(--primary-dark);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.privacy_point > .privacy_point_content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.privacy_point > .privacy_point_content > ul > li {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.privacy_content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.privacy_point_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media (899px>=width) {
+  .privacy_point > .privacy_point_content > ul > li {
+    margin-left: 0;
+  }
+  .privacy_point > div:first-child > h1 {
+    font-size: 0.94rem;
+  }
 }
