@@ -2,7 +2,7 @@ export const privacyPoints = [
   {
     title: "1. Collection of Personal Information:",
     description:
-      "We collect personal information that you provide directly to us when you use our services. \nPersonal information including but not limited to:",
+      "We collect personal information that you provide directly to us when you use our services.Personal information including but not limited to:",
     items: [
       "Personal details: Name, contact information, and other relevant identifiers.",
       "Professional information: Resumes, work history, skills, qualifications, certifications, and other relevant employment-related details.",
@@ -35,7 +35,7 @@ export const privacyPoints = [
   {
     title: "4. Data Security:",
     description:
-      "We implement and maintain reasonable security measures to protect your personal information from unauthorized access, disclosure, \nor alteration. However, no data transmission over the internet can be guaranteed to be entirely secure, so you should take precautions to \nprotect your information as well.",
+      "We implement and maintain reasonable security measures to protect your personal information from unauthorized access, disclosure,or alteration. However, no data transmission over the internet can be guaranteed to be entirely secure, so you should take precautions to protect your information as well.",
     items: [],
   },
   {
@@ -52,19 +52,19 @@ export const privacyPoints = [
   {
     title: "6. International Data Transfers:",
     description:
-      "Your personal information may be transferred to, and processed in, countries other than the one in which you reside. We will ensure that \nsuch transfers are in compliance with applicable data protection laws and that appropriate safeguards are in place.",
+      "Your personal information may be transferred to, and processed in, countries other than the one in which you reside. We will ensure that such transfers are in compliance with applicable data protection laws and that appropriate safeguards are in place.",
     items: [],
   },
   {
     title: "7. Changes to the Privacy Policy:",
     description:
-      "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or \nregulatory reasons. We will provide notice of any significant changes.",
+      "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will provide notice of any significant changes.",
     items: [],
   },
   {
     title: "8. Contact Us:",
     description:
-      "If you have any questions, concerns, or requests related to this Privacy Policy, please contact our Privacy Team at \nprivacy@teamreferr.com",
+      "If you have any questions, concerns, or requests related to this Privacy Policy, please contact our Privacy Team at privacy@teamreferr.com",
     items: [],
   },
 ];

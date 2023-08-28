@@ -42,7 +42,7 @@ class PrivacySection extends HTMLElement {
         itemsList = `
                 <ul>
                     ${point.items
-                      .map((item) => `<li>${item.replace(/\n/g, "<br>")}</li>`)
+                      .map((item) => `<li>${item}</li>`)
                       .join("")}
                 </ul>
             `;
